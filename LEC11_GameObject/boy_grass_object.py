@@ -21,6 +21,8 @@ class Ball :
     def update(self) :
         self.frame = (self.frame+1)%8
         self.y += 5
+    def draw(self) :
+        self.image.clip_draw(self.frame*100,0,100,100,self.x,self.y)
 
     pass
 class Boy:
