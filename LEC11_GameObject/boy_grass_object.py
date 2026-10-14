@@ -13,18 +13,18 @@ class Grass:
     def update(self) :
         pass
     pass
-class Ball :
+class Ball:
     def __init__(self) :
-        self.imamge = load_image('ball41x41.png')
-        self.x,self.y = random.randint(100,800),(90,300)
+        self.image = load_image('ball41x41.png')
+        self.x, self.y = random.randint(100,800),90
         self.frame = random.randint(0,7)
     def update(self) :
-        self.frame = (self.frame+1)%8
-        self.y += 5
+        self.frame =(self.frame+1)%1
+        self.y +=5
     def draw(self) :
-        frame_width = (self.image.w//10)
-        frame_height = self.image.h
-        self.image.clip_draw(self.frame*frame_width,0,frame_width,frame_height,self.x,self.y,frame_width//2,frame_height//2)
+        self.image.clip_draw(self.frame*100,0,100,100,self.x,self.y)
+
+        
     pass
 class Boy:
     def __init__(self) :
@@ -65,13 +65,18 @@ def reset_world():
     global ball
 
     running = True
+    
     world =[]
+    
     grass = Grass() # Grass 클래스 이용하여, grass 객체 생성
     world.append(grass)
+    
     team = [Boy() for i in range(11)] # Boy 클래스 이용하여, boy 객체 11개 생성
     world+= team    
+
     ball = Ball()
-    world +=ball
+    world.append(ball)
+    
     zombie = Zombie() # Zombie 클래스 이용하여, zombie 객체 생성
     world.append(zombie)
 
