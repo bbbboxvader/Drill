@@ -17,7 +17,7 @@ class Ball:
     def __init__(self) :
         self.image = load_image('ball41x41.png')
         self.x = random.randint(100,800)
-        self.y = random.randint(90,300)
+        self.y = 90
         self.frame = random.randint(0,7)
         self.size = random.randint(5,50)
 
