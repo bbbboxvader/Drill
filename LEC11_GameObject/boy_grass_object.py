@@ -19,6 +19,8 @@ class Ball:
         self.x = random.randint(100,800)
         self.y = random.randint(90,300)
         self.frame = random.randint(0,7)
+        self.size = random.randint(5,50)
+
     def update(self) :
         self.frame =(self.frame+1)%1
         if self.y<560 :
@@ -27,7 +29,10 @@ class Ball:
             self.y -= 9
 
     def draw(self) :
-        self.image.clip_draw(self.frame*100,0,100,100,self.x,self.y)
+        rand= random.randint(1,5)
+        frame_width = self.image.w//2
+        frame_height = self.image.h//2
+        self.image.clip_draw(self.frame*100,0,100,100,self.x,self.y,self.width+frame_width,self.width+frame_height)
 
         
     pass
