@@ -20,7 +20,8 @@ class Ball :
         self.frame = random.randint(0,7)
     def update(self) :
         self.frame = (self.frame+1)%8
-        
+        self.y += 5
+
     pass
 class Boy:
     def __init__(self) :
