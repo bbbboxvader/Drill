@@ -63,7 +63,7 @@ def reset_world():
     global team
     global grass
     global ball
-
+    global ballteam
     running = True
     
     world =[]
