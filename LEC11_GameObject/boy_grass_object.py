@@ -23,7 +23,8 @@ class Ball:
         self.frame =(self.frame+1)%1
         if self.y<560 :
             self.y += random.randint(5,10)
-        
+        else :
+            self.y -= 9
 
     def draw(self) :
         self.image.clip_draw(self.frame*100,0,100,100,self.x,self.y)
