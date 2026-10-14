@@ -18,6 +18,9 @@ class Ball :
         self.imamge = load_image('ball41x41.png')
         self.x,self.y = random.randint(100,800),(90,300)
         self.frame = random.randint(0,7)
+    def update(self) :
+        self.frame = (self.frame+1)%8
+        
     pass
 class Boy:
     def __init__(self) :
