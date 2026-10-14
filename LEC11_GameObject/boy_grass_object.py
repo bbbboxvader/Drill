@@ -16,6 +16,7 @@ class Grass:
 class Ball :
     def __init__(self) :
         self.imamge = load_image('ball41x41.png')
+        self.x,self.y = random.randint(100,800),(90,300)
     pass
 class Boy:
     def __init__(self) :
