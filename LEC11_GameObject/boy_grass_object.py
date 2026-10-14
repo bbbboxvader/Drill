@@ -16,11 +16,13 @@ class Grass:
 class Ball:
     def __init__(self) :
         self.image = load_image('ball41x41.png')
-        self.x, self.y = random.randint(100,800),90
+        self.x = random.randint(100,800)
+        self.y = random.randint(90,300)
         self.frame = random.randint(0,7)
     def update(self) :
         self.frame =(self.frame+1)%1
-        self.y +=5
+
+        self.y += 5
     def draw(self) :
         self.image.clip_draw(self.frame*100,0,100,100,self.x,self.y)
 
