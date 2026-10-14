@@ -22,8 +22,9 @@ class Ball :
         self.frame = (self.frame+1)%8
         self.y += 5
     def draw(self) :
-        self.image.clip_draw(self.frame*100,0,100,100,self.x,self.y)
-
+        frame_width = (self.image.w//10)
+        frame_height = self.image.h
+        self.image.clip_draw(self.frame*frame_width,0,frame_width,frame_height,self.x,self.y,frame_width//2,frame_height//2)
     pass
 class Boy:
     def __init__(self) :
@@ -61,13 +62,15 @@ def reset_world():
     global world
     global team
     global grass
-    
+    global ball
+
     running = True
     world =[]
     grass = Grass() # Grass 클래스 이용하여, grass 객체 생성
     world.append(grass)
     team = [Boy() for i in range(11)] # Boy 클래스 이용하여, boy 객체 11개 생성
     world+= team    
+    ball = Ball()
     zombie = Zombie() # Zombie 클래스 이용하여, zombie 객체 생성
     world.append(zombie)
 
