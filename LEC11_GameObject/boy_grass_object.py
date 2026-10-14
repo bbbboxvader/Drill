@@ -74,8 +74,8 @@ def reset_world():
     team = [Boy() for i in range(11)] # Boy 클래스 이용하여, boy 객체 11개 생성
     world+= team    
 
-    ball = Ball()
-    world.append(ball)
+    ballteam = [Ball()for i in range(20)]
+    world+= ballteam
     
     zombie = Zombie() # Zombie 클래스 이용하여, zombie 객체 생성
     world.append(zombie)
